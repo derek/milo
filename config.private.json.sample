@@ -1,0 +1,10 @@
+1) Obtain a token by executing the following command and inserting the value below
+	curl https://api.github.com/authorizations -d '{"scopes": ["gist"],"note": "Milo"}' --user yourUsername:yourPassword
+2) Rename this file to config.private.json
+3) Delete everything above this line
+---------------
+{
+	"github" : {
+		"token" : "YOUR_TOKEN_GOES_HERE"
+	}
+}

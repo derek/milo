@@ -22,7 +22,8 @@
         "yql": "0.4.7",
         "optimist": "0.3.4",
         "yui-coverage": "0.0.14",
-        "gister": "0.2.1"
+        "gister": "0.2.1",
+        "jslint": "0.1.8"
     },
     "license": "BSD"
 }

@@ -1,3 +1,4 @@
+
            ____,'`-, 
       _,--'   ,/::.; 
    ,-'       ,/::,' `---.___        ___,_ 
@@ -21,8 +22,13 @@
                    |:  ::::.       ::' 
                    |:  ::::::    ,::' 
 
-valid commands
---------------
-- tweets
-- modules
-- coverage
+Commands
+--------
+`milo build {module}` - Builds the specified module
+`milo coverage {module}` - Fires up server to check your code coverage
+`milo gist {filepath}` - Create a Gist with the given file
+`milo help` - This screen
+`milo lint {filepath}` - Lint a JavaScript file
+`milo module` - A list of the built modules in your yui path
+`milo tweets` - The latest from @yuilibrary
+

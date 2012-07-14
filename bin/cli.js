@@ -3,9 +3,18 @@
 
 var yql  = require('yql'),
     fs = require('fs'),
-    config = require('../config')
+    configPublic = require(process.env.NODE_PATH + 'milo/config.public')
+    configPrivate = require(process.env.NODE_PATH + 'milo/config.private')
     argv = require('optimist').argv,
-    log = console.log;
+    log = console.log,
+    config = {};
+
+for (var i in configPublic) {
+    config[i] = configPublic[i]
+}
+for (var i in configPrivate) {
+    config[i] = configPrivate[i]
+}
 
 function main() {
     var arg = argv._[0];

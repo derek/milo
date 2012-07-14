@@ -1,47 +1,65 @@
 #!/usr/bin/env node
 /*jslint sloppy:true*/
 
-var cli  = require('cli'),
-    path = require('path'),
-    Burt = require('../lib/burt'),
-    meta = require('../package.json');
+var yql  = require('yql');
+//     path = require('path'),
+//     Burt = require('../lib/burt'),
+//     meta = require('../package.json');
 
-cli.parse({
-    file: ['f', 'A source .burt file', 'string'],
-    debug: [null, 'Debugging info', 'boolean', false],
-    version: ['v', 'Print the version']
-});
 
-cli.main(function () {
-    var opts = this.options,
-        css,
-        reynolds;
+function prompt(callback) {
+    var stdin = process.stdin, 
+        stdout = process.stdout;
 
-    if (opts.version) {
-        console.log('v' + meta.version);
-        return;
+    stdin.resume();
+    stdout.write("$ ");
+
+    stdin.once('data', function(data) {
+        data = data.toString().trim();
+        react(data);
+    });
+}
+
+function main() {
+    prompt(react);
+}
+
+function react (val) {
+    switch(val) {
+        case "a":
+            getTweets();
+            break;
+
+        default:
+            console.log('bad!');
+            break;
     }
 
-    reynolds = new Burt.Reynolds();
-    reynolds.addSource(opts.file);
-    css = reynolds.getCSS();
+    prompt(react);
+}
 
-    if (opts.debug) {
-        console.log('\nversion: ' + meta.version);
-        console.log('\n--- options ---');
-        console.log(opts);
+main();
 
-        console.log('\n--- data ---');
-        console.log(reynolds.data);
 
-        // console.log('\n--- source ---');
-        // console.log(reynolds.source);
 
-        console.log('\n--- output ---')
-    }
 
-    // or use the sugary method
-    // css = Burt.getCSS(opts.file);
 
-    console.log(css);
-});
+function getTweets () {
+
+    new yql.exec("select * from twitter.user.timeline where (id = @id)", function(response) {
+
+        if (response.error) {
+            console.log(require('util').inspect(error));
+            console.log("Example #2... Error: " + response.error.description);
+        } 
+        else {
+            var tweets = response.query.results;
+            console.dir(response.query.results);
+            // console.log(tweets[0].text);
+            // console.log("Example #2... Latest tweet from @" + tweets[0].user.screen_name + ": " + tweets[0].text);
+        }
+
+    }, {id:"yuilibrary"}, {ssl:true});
+}
+
+

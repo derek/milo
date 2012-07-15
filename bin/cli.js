@@ -1,29 +1,20 @@
 #!/usr/bin/env node
 /*jslint nomen:true sloppy:true white:true node:true*/
 
-var yql = require('yql'),
-    fs = require('fs'),
-    configPublic = require('milo/config.public'),
-    configPrivate = require('milo/config.private'),
-    argv = require('optimist').argv,
-    config = {},
-    i;
+var argv = require('optimist').argv,
+    plugin = argv._.shift() || 'help',
+    args = argv._,
+    commands =  ['build',
+                 'coverage',
+                 'gist',
+                 'help',
+                 'lint',
+                 'module',
+                 'media'];
 
-for (i in configPublic) {
-    if (configPublic.hasOwnProperty(i)) {
-        config[i] = configPublic[i];   
-    }
-}
-
-for (i in configPrivate) {
-    if (configPrivate.hasOwnProperty(i)) {
-        config[i] = configPrivate[i];   
-    }
-}
-
-(function () {
-    var plugin = argv._.shift() || 'help',
-        args = argv._;
-    
+if (commands.indexOf(plugin) >= 0) {
     require('milo/lib/' + plugin).apply(this, args);
-})();
+}
+else {
+    console.log('Invalid command');
+}

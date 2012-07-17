@@ -6,11 +6,13 @@ var argv = require('optimist').argv,
     args = argv._,
     commands =  ['build',
                  'coverage',
+                 'fresh',
                  'gist',
                  'help',
                  'lint',
                  'module',
-                 'media'];
+                 'media',
+                 'wrap'];
 
 if (commands.indexOf(plugin) >= 0) {
     require('milo/lib/' + plugin).apply(this, args);

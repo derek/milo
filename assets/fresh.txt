@@ -1,0 +1,17 @@
+<html>
+	<head>
+		<script src="http://yui.yahooapis.com/3.5.1/build/yui/yui-min.js"></script>
+		<script>
+		YUI({
+			modules: {
+				
+			}
+		}).use('node', function () {
+
+		})
+		</script>
+	</head>
+	<body>
+		<p>And GO!</p>
+	</body>
+</html>

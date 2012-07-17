@@ -9,7 +9,7 @@
     },
     "main": "./lib/milo.js",
     "bin": {
-        "milo": "./bin/cli.js"
+        "milo": "./bin/milo.js"
     },
     "url": "https://github.com/derek/milo",
     "keywords": ["milo"],

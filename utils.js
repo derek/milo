@@ -27,6 +27,15 @@ module.exports = {
 
 		return require('fs').readFileSync(process.env.NODE_PATH + 'milo/assets/' + file, 'utf-8');
 
+	},
+
+	getGister: function () {
+		var config = require('milo/utils').getConfig(),
+        	Gister = require('gister');
+
+        return new Gister({
+            token: config.github.token
+        });
 	}
 
 };

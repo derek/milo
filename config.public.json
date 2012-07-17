@@ -2,6 +2,7 @@
 	"yuiPath" : "/Users/drg/src/yui/yui3/",
 	"editorCommand" : "subl",
 	"browserCommand" : "open",
+	"docsCommand" : "selleck -s",
 	"jslintOptions" : {
 		"sloppy" : true, 
 		"node"   : true, 

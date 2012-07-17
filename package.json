@@ -3,7 +3,7 @@
     "version": "0.0.1",
     "preferGlobal": "true",
     "author": "Derek Gathright <mail@derek.io>",
-    "description": "",
+    "description": "A command-line tool for YUI development",
     "engine": {
         "node": ">=v0.7.2"
     },

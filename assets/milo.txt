@@ -35,6 +35,7 @@ Commands
 `milo help` - This screen
 `milo lint {filepath}` - Lint a JavaScript file
 `milo media [tweets/headlines/relay]` - The latest tweets & blog posts
+`milo module {module} [files/history/meta]` - A list of the built modules in your yui path
 `milo modules` - A list of the built modules in your yui path
 `milo start {dirname}` - Generate a YUI starter app in {dirname}
 

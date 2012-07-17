@@ -1,5 +1,7 @@
 {
 	"yuiPath" : "/Users/drg/src/yui/yui3/",
+	"editorCommand" : "subl",
+	"browserCommand" : "open",
 	"jslintOptions" : {
 		"sloppy" : true, 
 		"node"   : true, 

@@ -26,7 +26,7 @@ Commands
 --------
 `milo build {module}` - Builds the specified module
 `milo coverage {module}` - Fires up server to check your code coverage
-`milo gist {filepath}` - Create a Gist with the given file
+`milo gist {dir/file}` - Create a Gist with the given directory or file
 `milo help` - This screen
 `milo lint {filepath}` - Lint a JavaScript file
 `milo media [tweets/headlines/relay]` - The latest tweets & blog posts

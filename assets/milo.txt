@@ -26,7 +26,7 @@ Commands
 --------
 `milo build {module}` - Builds the specified module
 `milo coverage {module}` - Fires up server to check your code coverage
-`milo fresh {filename}` - Generate a YUI starter page named {filename}
+`milo fresh {dirname}` - Generate a YUI starter app in {dirname}
 `milo gist {filepath}` - Create a Gist with the given file
 `milo help` - This screen
 `milo lint {filepath}` - Lint a JavaScript file

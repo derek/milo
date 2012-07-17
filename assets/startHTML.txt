@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.5.1/build/cssreset/cssreset-min.css">
+		<script src="http://yui.yahooapis.com/3.5.1/build/yui/yui-min.js"></script>
+		<script>
+		YUI({
+			modules: {
+				'my-module': {
+					fullpath: 'my-module.js',
+					requires: ['node', 'my-css']
+				},
+				'my-css': {
+					fullpath: 'my-css.css',
+					type: 'css'
+				}
+			}
+		}).use('my-module', function (Y) {
+			Y.one('#message').setContent(Y.message);
+		})
+		</script>
+	</head>
+	<body>
+		<p id="message"></p>
+		<img src="http://reid.github.com/decks/2011/jsconf/logo.png" height="300">
+	</body>
+</html>

@@ -10,7 +10,7 @@ var argv = require('optimist').argv,
                  'gist',
                  'help',
                  'lint',
-                 'module',
+                 'modules',
                  'media',
                  'wrap'];
 

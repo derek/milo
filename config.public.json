@@ -3,6 +3,9 @@
 	"editorCommand" : "subl",
 	"browserCommand" : "open",
 	"docsCommand" : "selleck -s",
+	"gists" : {
+		"basic" : 3131146
+	},
 	"jslintOptions" : {
 		"sloppy" : true, 
 		"node"   : true, 

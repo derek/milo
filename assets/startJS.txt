@@ -1,5 +1,0 @@
-YUI.add('my-module', function (Y) {
-	
-	Y.message = "Success!";
-
-});

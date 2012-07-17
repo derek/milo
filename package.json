@@ -23,7 +23,8 @@
         "optimist": "0.3.4",
         "yui-coverage": "0.0.14",
         "gister": "0.2.1",
-        "jslint": "0.1.8"
+        "jslint": "0.1.8",
+        "selleck": "0.1.13"
     },
     "license": "BSD"
 }

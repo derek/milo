@@ -1,3 +1,9 @@
 {
-	"yuiPath" : "/Users/drg/src/yui/yui3/"
+	"yuiPath" : "/Users/drg/src/yui/yui3/",
+	"jslintOptions" : {
+		"sloppy" : true, 
+		"node"   : true, 
+		"nomen"  : true, 
+		"white"  : true
+	}
 }

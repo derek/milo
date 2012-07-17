@@ -32,11 +32,12 @@ Commands
 `milo build {module}` - Builds the specified module
 `milo coverage {module}` - Fires up server to check your code coverage for {module}
 `milo docs {module}` - Fires up server to read documentation for {module}
-`milo gist {dir/file}` - Create a Gist with the given directory or file
+`milo get {gistID}` - Clone a gist into a dir called {gistID}
 `milo help` - This screen
-`milo lint {filepath}` - Lint a JavaScript file
+`milo lint {file/path/module}` - Lint a the JS file(s) specified, found in the given directory, or in the YUI module's /js/ dir
 `milo media [tweets/headlines/relay]` - The latest tweets & blog posts
 `milo module {module} [files/history/meta]` - A list of the built modules in your yui path
 `milo modules` - A list of the built modules in your yui path
-`milo start {dirname}` - Generate a YUI starter app in {dirname}
+`milo share {dir/file}` - Create a Gist with the given directory or file
+`milo start {template} {dirname}` - Generate a YUI starter app from {template} in {dirname}
 

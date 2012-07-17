@@ -20,6 +20,11 @@ var getConfig = function () {
 	return config;
 }
 
+var getAsset = function (file) {
+	return require('fs').readFileSync(process.env.NODE_PATH + 'milo/assets/' + file, 'utf-8');
+}
+
 module.exports = {
-	getConfig: getConfig
+	getConfig: getConfig,
+	getAsset: getAsset
 };

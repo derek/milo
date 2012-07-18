@@ -24,7 +24,9 @@
         "yui-coverage": "0.0.14",
         "gister": "0.2.1",
         "jslint": "0.1.8",
-        "selleck": "0.1.13"
+        "selleck": "0.1.13",
+        "express": "3.0",
+        "handlebars": "1.0"
     },
     "license": "BSD"
 }

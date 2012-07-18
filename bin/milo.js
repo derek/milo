@@ -6,6 +6,8 @@ var argv = require('optimist').argv,
     args = argv._,
     files = require('fs').readdirSync(process.env.NODE_PATH + 'milo/lib/');
 
+this.flags = argv;
+
 if (files.indexOf(plugin + '.js') >= 0) {
     require('milo/lib/' + plugin).apply(this, args);
 }

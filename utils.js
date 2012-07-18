@@ -29,6 +29,17 @@ module.exports = {
 
 	},
 
+	renderTemplate: function (template, subs) {
+
+		var handlebars = require('handlebars'),
+			asset = 'templates/' + template + '.mustache',
+	        source = require('milo/utils').getAsset(asset),
+	        template = handlebars.compile(source);
+
+    	return template(subs);
+
+	},
+
 	getGister: function () {
 		var config = require('milo/utils').getConfig(),
         	Gister = require('gister');

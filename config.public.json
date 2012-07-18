@@ -6,6 +6,12 @@
 	"gists" : {
 		"basic" : 3131146
 	},
+	"github" : {
+		"user" : "derek"
+	},
+	"yuilibrary" : {
+		"user" : "drgath"
+	},
 	"jslintOptions" : {
 		"sloppy" : true, 
 		"node"   : true, 

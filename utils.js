@@ -29,20 +29,20 @@ module.exports = {
 
 	},
 
-	renderTemplate: function (template, subs) {
+	renderTemplate: function (name, subs) {
 
 		var handlebars = require('handlebars'),
-			asset = 'templates/' + template + '.mustache',
+			asset = 'templates/' + name + '.mustache',
 	        source = require('milo/utils').getAsset(asset),
 	        template = handlebars.compile(source);
 
-    	return template(subs);
+		return template(subs);
 
 	},
 
 	getGister: function () {
 		var config = require('milo/utils').getConfig(),
-        	Gister = require('gister');
+		Gister = require('gister');
 
         return new Gister({
             token: config.github.token

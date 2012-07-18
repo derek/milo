@@ -39,5 +39,6 @@ Commands
 `milo module {module} [files/history/meta]` - A list of the built modules in your yui path
 `milo modules` - A list of the built modules in your yui path
 `milo share {dir/file}` - Create a Gist with the given directory or file
+`milo server` - Fires up a dynamic module server @ http://localhost:3000/. Add it as your 'base' config.
 `milo start {template} {dirname}` - Generate a YUI starter app from {template} in {dirname}
 

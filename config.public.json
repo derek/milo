@@ -13,6 +13,7 @@
 		"derek" : {
 			"source" : "3139908",
 			"docsCommand" : "selleck -s",
+			"coverageCommand" : "yui-coverage",
 			"yuiPath" : "/Users/drg/src/yui/yui3/",
 			"yuilibrary" : {
 				"user" : "drgath"

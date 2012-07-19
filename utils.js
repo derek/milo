@@ -1,6 +1,6 @@
 function getConfig () {
 
-	var configPublic = require('milo/config.public'),
+	var configPublic = require('./config.public'),
 		fs = require('fs'),
 		configPrivate,
 		config = {},
@@ -18,7 +18,7 @@ function getConfig () {
 
 	if (fs.existsSync(miloPath + 'config.private.json')) {
 		try {
-			configPrivate = require('milo/config.private');
+			configPrivate = require('./config.private');
 			for (key in configPrivate.global) {
 				config[key] = configPrivate.global[key];
 			}
@@ -48,7 +48,7 @@ function renderTemplate (name, subs) {
 
 	var handlebars = require('handlebars'),
 		asset = 'templates/' + name + '.mustache',
-		source = require('milo/utils').getAsset(asset),
+		source = require('./utils').getAsset(asset),
 		template = handlebars.compile(source);
 
 	return template(subs);
@@ -56,7 +56,7 @@ function renderTemplate (name, subs) {
 }
 
 function getGister (config) {
-	var config = require('milo/utils').getConfig(),
+	var config = require('./utils').getConfig(),
 		Gister = require('gister');
 
 	return new Gister({
@@ -85,7 +85,8 @@ function getUtilityMap () {
 }
 
 function getMiloPath () {
-	return __filename.replace('utils.js', '');
+	var path = require('path');
+	return __filename.replace(path.basename(__filename), '');
 }
 
 var miloPath = getMiloPath();
@@ -95,5 +96,6 @@ module.exports = {
 	getAsset : getAsset,
 	renderTemplate : renderTemplate,
 	getGister : getGister,
-	getUtilityMap: getUtilityMap
+	getUtilityMap: getUtilityMap,
+	getMiloPath: getMiloPath
 };

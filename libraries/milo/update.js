@@ -1,4 +1,4 @@
-var miloPath = require('utils').getMiloPath();
+var miloPath = require('../../utils').getMiloPath();
 
 module.exports = function () {
 

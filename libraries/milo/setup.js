@@ -1,6 +1,6 @@
 var fs = require('fs'),
-	miloPath = require('utils').getMiloPath(),
-	milo = require('milo/utils').getAsset('milo.txt'),
+	miloPath = require('../../utils').getMiloPath(),
+	milo = require('../../utils').getAsset('milo.txt'),
 	exec = require('child_process').exec;
 
 module.exports = function () {

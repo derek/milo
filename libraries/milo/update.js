@@ -22,7 +22,8 @@ module.exports = function () {
 			}
 
 			if (fs.existsSync(dir)) {
-				console.log('\nI would pull ' + id + ', but that isn\'t supported yet.  Manually run `git pull` @ ' + dir + '\n');
+				console.log('\nUpdating ' + id + ' ...');
+				exec('git pull ', {cwd: dir})
 			}
 			else {
 				console.log('\nCloning ' + id + ' ...');

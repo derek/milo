@@ -9,12 +9,12 @@ function getConfig () {
 		key;
 
 	for (key in configPublic.global) {
-        config[key] = configPublic.global[key];
+		config[key] = configPublic.global[key];
 	}
 
 	if (configPublic.libraries && configPublic.libraries[this.library]) {
 		for (key in configPublic.libraries[this.library]) {
-	        config[key] = configPublic.libraries[this.library][key];
+			config[key] = configPublic.libraries[this.library][key];
 		}
 	}
 
@@ -22,12 +22,12 @@ function getConfig () {
 		try {
 			configPrivate = require('milo/config.private');
 			for (key in configPrivate.global) {
-		        config[key] = configPrivate.global[key];
+				config[key] = configPrivate.global[key];
 			}
 
 			if (configPrivate.libraries && configPrivate.libraries[this.library]) {
 				for (key in configPrivate.libraries[this.library]) {
-			        config[key] = configPrivate.libraries[this.library][key];
+					config[key] = configPrivate.libraries[this.library][key];
 				}
 			}
 		}
@@ -37,7 +37,7 @@ function getConfig () {
 	}
 
 	return config;
-	
+
 }
 
 function getAsset (file) {
@@ -50,8 +50,8 @@ function renderTemplate (name, subs) {
 
 	var handlebars = require('handlebars'),
 		asset = 'templates/' + name + '.mustache',
-        source = require('milo/utils').getAsset(asset),
-        template = handlebars.compile(source);
+		source = require('milo/utils').getAsset(asset),
+		template = handlebars.compile(source);
 
 	return template(subs);
 
@@ -61,9 +61,9 @@ function getGister (config) {
 	var config = require('milo/utils').getConfig(),
 		Gister = require('gister');
 
-    return new Gister({
-        token: config.github.token
-    });
+	return new Gister({
+		token: config.github.token
+	});
 }
 
 function getUtilityMap () {
@@ -78,7 +78,7 @@ function getUtilityMap () {
 		utilFiles.forEach(function (file) {
 			if (file.match('.js')) {
 				var name = file.replace('.js', '');
-				utils[name] = 'libraries/' + dir + '/' + name;	
+				utils[name] = 'libraries/' + dir + '/' + name;
 			}
 		});
 	});

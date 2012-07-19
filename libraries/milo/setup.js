@@ -1,7 +1,7 @@
 var fs = require('fs'),
 	miloPath = process.env.NODE_PATH + "milo/",
 	milo = require('milo/utils').getAsset('milo.txt'),
-    exec = require('child_process').exec;
+	exec = require('child_process').exec;
 
 module.exports = function () {
 
@@ -29,7 +29,7 @@ module.exports = function () {
 			return;
 		}
 
-	    console.log(milo);
+		console.log(milo);
 
 		console.log("Nice job!  Next up is to download some milo libraries. \n\nYou already have one to get started, called 'update', so we'll use that to fetch them from my buddy the Octocat.");
 		console.log('');

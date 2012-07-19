@@ -8,7 +8,7 @@ module.exports = function () {
 		config, id;
 
 	for(id in libraries) {
-		config = require('milo/utils').getConfig.apply({library:id});
+		config = require('../../utils').getConfig.apply({library:id});
 
 		var dir = miloPath + 'libraries/' + id + '/',
 			git_url;

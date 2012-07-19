@@ -1,22 +1,28 @@
 {
-	"yuiPath" : "/Users/drg/src/yui/yui3/",
-	"editorCommand" : "subl",
-	"browserCommand" : "open",
-	"docsCommand" : "selleck -s",
-	"gists" : {
-		"utilities" : 3139908,
-		"basic" : 3131146
+	"global" : {
+		"editorCommand" : "subl",
+		"browserCommand" : "open",
+		"github" : {
+			"user" : "derek"
+		}
 	},
-	"github" : {
-		"user" : "derek"
-	},
-	"yuilibrary" : {
-		"user" : "drgath"
-	},
-	"jslintOptions" : {
-		"sloppy" : true, 
-		"node"   : true, 
-		"nomen"  : true, 
-		"white"  : true
+	"libraries" : {
+		"derek" : {
+			"source" : "3139908",
+			"docsCommand" : "selleck -s",
+			"yuiPath" : "/Users/drg/src/yui/yui3/",
+			"yuilibrary" : {
+				"user" : "drgath"
+			},
+			"apps" : {
+				"basic" : 3131146
+			},
+			"jslintOptions" : {
+				"sloppy" : true, 
+				"node"   : true, 
+				"nomen"  : true, 
+				"white"  : true
+			}
+		}
 	}
 }

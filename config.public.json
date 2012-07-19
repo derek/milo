@@ -18,7 +18,8 @@
 				"user" : "drgath"
 			},
 			"apps" : {
-				"basic" : 3131146
+				"simple" : 3131146,
+				"Y.app" : 3141472
 			},
 			"jslintOptions" : {
 				"sloppy" : true, 

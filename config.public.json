@@ -7,6 +7,9 @@
 		}
 	},
 	"libraries" : {
+		"milo" : {
+
+		},
 		"derek" : {
 			"source" : "3139908",
 			"docsCommand" : "selleck -s",

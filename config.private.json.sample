@@ -3,7 +3,9 @@
 2) Delete everything above the opening bracket
 ---------------
 {
-	"github" : {
-		"token" : "YOUR_TOKEN_GOES_HERE"
+	"global" : {
+		"github" : {
+			"token" : "YOUR_TOKEN_GOES_HERE"
+		}
 	}
 }

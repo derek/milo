@@ -2,38 +2,24 @@
 /*jslint nomen:true sloppy:true white:true node:true*/
 
 var argv = require('optimist').argv,
-    utilityName = argv._.shift() || false,
+	utils = require('milo/utils'),
+    utilityName = argv._.shift() || 'setup',
     args = argv._,
-    setup = require('milo/lib/setup');
+    utilities = utils.getUtilityMap(),
+	utility,
+	offset;
 
 this.flags = argv;
 
-switch(utilityName) {
-	case false:
-		setup.intro();
-		break;
-
-	case "install":
-	case "update":
-		setup[utilityName]();
-		break;
-
-	default:
-		var utilities = require('milo/lib/utils').getUtilityMap(),
-			utility;
-
-		try {
-		    utility = require('milo/' + utilities[utilityName]);
-		}
-		catch (e) {
-		    console.log('Invalid command');
-		    return;
-		}
-
-		this.library = utilities[utilityName].split('/')[1];
-		this.config = require('milo/lib/utils').getConfig.apply(this);
-
-		utility.apply(this, args)
-		
-		break;
+try {
+    utility = require('milo/' + utilities[utilityName]);
 }
+catch (e) {
+    console.log('Invalid command');
+    return;
+}
+
+this.library = utilities[utilityName].split('/')[(utilityName === 'milo' ? 0 : 1)];
+this.config = utils.getConfig.apply(this);
+
+utility.apply(this, args);

@@ -4217,28 +4217,5 @@
         "requires": [
             "yui-base"
         ]
-    },
-    "/yui/yui.js": {
-        "module": [
-            "yui"
-        ],
-        "source": "/yui/yui.js",
-        "targets": [
-            "/src/yui/js/yui.js",
-            "/src/yui/js/yui-base.js",
-            "/src/yui/js/yui-lang.js",
-            "/src/yui/js/queue-base.js",
-            "/src/yui/js/yui-core.js",
-            "/src/yui/js/yui-object.js",
-            "/src/yui/js/yui-ua.js",
-            "/src/yui/js/alias.js"
-        ],
-        "prependfiles": [
-            "js/yui.js"
-        ],
-        "requires": [
-            "loader-base",
-            "yui-array"
-        ]
     }
 }

@@ -16,9 +16,23 @@ milo *command* {required} [optional] --additional-flags
 Commands
 ========
 
+`milo app {template} [dir]`
+
+Generate a YUI starter app from {template} in {dir}.  Templates are actually gist IDs, which you can find in `config.public.json`.  Great to be used in conjunction with `fetch`, so once you post your files, give someone else that ID and they can run `milo fetch {gist ID}` to start using your app.
+
+This is really just a shortcut for `milo fetch {gistID} {dir}`
+
+---
+
 `milo build {module}`
 
 Builds the specified module.  Just an alias for `ant all -q -Dlint.skip=true` being run in a module's directory.  Useful as you can rebuild a specific module without needing to `cd` into it.
+
+---
+
+`milo checker`
+
+Just a general utility for digging through YUI's source and detecting any oddities
 
 ---
 
@@ -30,7 +44,13 @@ Fires up server to check your code coverage for {module}
 
 `milo docs {module}`
 
-Fires up a Selleck server to read documentation for {module}.
+Fires up a Selleck server to read documentation for {module}
+
+---
+
+`milo edit {module}`
+
+Easily open up an editor for the specified module
 
 ---
 
@@ -103,14 +123,6 @@ Creates a Gist with the given directory or file.  If a directory is specified, i
 
 ---
 
-`milo start {template} [dir]`
-
-Generate a YUI starter app from {template} in {dir}.  Templates are actually gist IDs, which you can find in `config.public.json`.  Great to be used in conjunction with `fetch`, so once you post your files, give someone else that ID and they can run `milo fetch {gist ID}` to start using your app.
-
-This is really just a shortcut for `milo fetch {gistID} {dir}`
-
----
-
 `milo tickets`
 
 Fetches your tickets from the YUILibrary.com ticket tracker.  Can also specifiy additional flags for filtering.
@@ -118,4 +130,16 @@ Fetches your tickets from the YUILibrary.com ticket tracker.  Can also specifiy 
 --sprint={sprint} (e.g. "3")
 --component={component}
 
+---
 
+`milo help`
+
+Dumps a command routing map so you can see what commands you are able to run
+
+---
+
+`milo update`
+
+Updates your utilities by either cloning new libraries that haven't been yet, or (soon) pulling existing libraries to get updates.
+
+---

@@ -1,4 +1,4 @@
-var miloPath = process.env.NODE_PATH + "milo/";
+var miloPath = require('utils').getMiloPath();
 
 module.exports = function () {
 

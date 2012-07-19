@@ -1,5 +1,5 @@
 var fs = require('fs'),
-	miloPath = process.env.NODE_PATH + "milo/",
+	miloPath = require('utils').getMiloPath(),
 	milo = require('milo/utils').getAsset('milo.txt'),
 	exec = require('child_process').exec;
 

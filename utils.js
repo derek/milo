@@ -1,5 +1,3 @@
-var miloPath = process.env.NODE_PATH + "milo/";
-
 function getConfig () {
 
 	var configPublic = require('milo/config.public'),
@@ -85,6 +83,12 @@ function getUtilityMap () {
 
 	return utils;
 }
+
+function getMiloPath () {
+	return __filename.replace('utils.js', '');
+}
+
+var miloPath = getMiloPath();
 
 module.exports = {
 	getConfig : getConfig,

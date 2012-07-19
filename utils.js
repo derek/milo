@@ -47,6 +47,24 @@ module.exports = {
         return new Gister({
             token: config.github.token
         });
+	},
+
+	getUtilities: function () {
+		var fs = require('fs'),
+			miloPath = process.env.NODE_PATH + "milo/",
+			utils = [],
+			files,
+			i;
+
+		files = fs.readdirSync(miloPath + 'utilities');
+
+		files.forEach(function (file) {
+			if (file.match('.js')) {
+				utils.push(file.replace('.js', ''))
+			}
+		});
+
+		return utils;
 	}
 
 };

@@ -4224,11 +4224,21 @@
         ],
         "source": "/yui/yui.js",
         "targets": [
-            "/src/yui/js/yui.js"
+            "/src/yui/js/yui.js",
+            "/src/yui/js/yui-base.js",
+            "/src/yui/js/yui-lang.js",
+            "/src/yui/js/queue-base.js",
+            "/src/yui/js/yui-core.js",
+            "/src/yui/js/yui-object.js",
+            "/src/yui/js/yui-ua.js",
+            "/src/yui/js/alias.js"
         ],
-        "prependfiles": null,
+        "prependfiles": [
+            "js/yui.js"
+        ],
         "requires": [
-            "loader-base"
+            "loader-base",
+            "yui-array"
         ]
     }
 }

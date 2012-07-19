@@ -3,7 +3,7 @@ module.exports = function (template, dir) {
 	    exec = require('child_process').exec,
         config = require('milo/utils').getConfig(),
 	    getAsset = require('milo/utils').getAsset,
-	    get = require('milo/lib/get'),
+	    get = require('milo/lib/fetch'),
 	    gistID;
 
 	if (dir === undefined) {

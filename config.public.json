@@ -4,6 +4,7 @@
 	"browserCommand" : "open",
 	"docsCommand" : "selleck -s",
 	"gists" : {
+		"utilities" : 3139908,
 		"basic" : 3131146
 	},
 	"github" : {

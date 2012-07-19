@@ -2,15 +2,29 @@
 /*jslint nomen:true sloppy:true white:true node:true*/
 
 var argv = require('optimist').argv,
-    plugin = argv._.shift() || 'help',
+    utility = argv._.shift() || false,
     args = argv._,
-    files = require('fs').readdirSync(process.env.NODE_PATH + 'milo/lib/');
+    setup = require('milo/setup');
 
 this.flags = argv;
 
-if (files.indexOf(plugin + '.js') >= 0) {
-    require('milo/lib/' + plugin).apply(this, args);
-}
-else {
-    console.log('Invalid command');
+switch(utility) {
+	case false:
+		setup.intro();
+		break;
+
+	case "install":
+	case "update":
+		setup[utility]();
+		break;
+
+	default:
+		try {
+		    var util = require('milo/utilities/' + utility);
+		}
+		catch (e) {
+		    console.log('Invalid command');
+		}
+		util.apply(this, args)
+		break;
 }

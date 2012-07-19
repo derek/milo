@@ -5,7 +5,7 @@ module.exports = function () {
 	var fs = require('fs'),
 		exec = require('child_process').exec,
 		libraries = require(miloPath + 'config.public').libraries,
-		config;
+		config, id;
 
 	for(id in libraries) {
 		config = require('milo/utils').getConfig.apply({library:id});
@@ -39,4 +39,4 @@ module.exports = function () {
 			}
 		}
 	}
-}
+};

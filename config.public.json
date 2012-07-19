@@ -25,7 +25,8 @@
 				"sloppy" : true, 
 				"node"   : true, 
 				"nomen"  : true, 
-				"white"  : true
+				"white"  : true,
+				"stupid" : true
 			}
 		}
 	}

@@ -16,7 +16,7 @@ module.exports = function () {
 		console.log("A newbie? Welcome! \n\nBefore we get to the fun stuff, first thing I need you to do is update your config files.");
 		console.log("You can find these in " + miloPath);
 		console.log('');
-		console.log('Be sure to follow the instructions about obtaining your Github token in config.private.json.')
+		console.log('Be sure to follow the instructions about obtaining your Github token in config.private.json.');
 		console.log('Once you do that, run `milo install` again so we can verify your config settings are correct.');
 		console.log('');
 	}
@@ -37,4 +37,4 @@ module.exports = function () {
 		console.log('');
 	}
 
-}
+};

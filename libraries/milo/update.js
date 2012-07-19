@@ -23,7 +23,9 @@ module.exports = function () {
 
 			if (fs.existsSync(dir)) {
 				console.log('\nUpdating ' + id + ' ...');
-				exec('git pull ', {cwd: dir})
+				exec('git pull ', {cwd: dir}).on('exit', function (code) {
+					console.log('Done\n');
+				});
 			}
 			else {
 				console.log('\nCloning ' + id + ' ...');

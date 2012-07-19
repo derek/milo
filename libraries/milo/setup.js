@@ -22,7 +22,7 @@ module.exports = function () {
 	}
 	else {
 		try {
-			require('milo/config.private');
+			require('../../config.private');
 		}
 		catch (e) {
 			console.log('Ruh roh.  Check your config.private.json, looks like there is a problem. ( ' + privateConfig + ' )');

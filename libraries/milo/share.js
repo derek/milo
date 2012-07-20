@@ -22,7 +22,7 @@ module.exports = function (path) {
 
     gister.on('created', function(gist) {
         var file;
-        exec('git init; git remote add --track master origin ' + gist.push_url + '; git add ./;', {cwd:path});
+        exec('git init; git remote add --track master origin ' + gist.git_push_url + '; git add ./; git pull;', {cwd: process.cwd() + '/' + path});
         console.log('');
         console.log("URL: " + gist.html_url);
         console.log("\nRaw URLs");

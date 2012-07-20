@@ -39,8 +39,8 @@ function getConfig () {
 }
 
 function getAsset (file) {
-
-	return require('fs').readFileSync(process.env.NODE_PATH + 'milo/libraries/milo/assets/' + file, 'utf-8');
+	var miloPath = getMiloPath();
+	return require('fs').readFileSync(miloPath + 'libraries/milo/assets/' + file, 'utf-8');
 
 }
 

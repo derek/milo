@@ -6,17 +6,12 @@ module.exports = function () {
 		miloPath = utils.getMiloPath(),
 		milo = utils.getAsset(this.library, 'milo.txt'),
 		exec = require('child_process').exec,
-		publicConfig = miloPath + 'config.public.json',
-		privateConfig = miloPath + 'config.private.json',
+		configSource = miloPath + 'libraries/milo/assets/config.json.sample',
+		configTarget = miloPath + 'config.json',
 		noob = false;
 
-	if (!fs.existsSync(publicConfig)) {
-		exec('mv ' + publicConfig + '.sample ' + publicConfig);
-		noob = true;
-	}
-
-	if (!fs.existsSync(privateConfig)) {
-		exec('mv ' + privateConfig + '.sample ' + privateConfig);
+	if (!fs.existsSync(configTarget)) {
+		exec('mv ' + configSource + ' ' + configTarget);
 		noob = true;
 	}
 

@@ -1,0 +1,39 @@
+{
+	"global" : {
+		"_comment" : "Anything here is available as a property inside -any- library",
+		"editorCommand" : "subl",
+		"browserCommand" : "open",
+		"github" : {
+			"user" : "{{yourUsername}}"
+		}
+	},
+	"libraries" : {
+		"_comment" : "Anything here is available as a property inside the specified library",
+		"milo" : {
+			"_comment" : "Intentionally empty, for now."
+		},
+		"allen" : {
+			"source" : 3147522
+		},
+		"yui" : {
+			"source" : "3139908",
+			"docsCommand" : "selleck -s",
+			"coverageCommand" : "yui-coverage",
+			"yuiPath" : "/Users/drg/src/yui/yui3/",
+			"yuilibrary" : {
+				"user" : "{{yourUsername}}"
+			},
+			"apps" : {
+				"simple" : 3131146,
+				"Y.app" : 3141472
+			},
+			"jslintOptions" : {
+				"sloppy" : true, 
+				"node"   : true, 
+				"nomen"  : true, 
+				"white"  : true,
+				"stupid" : true
+			}
+		}
+	}
+}

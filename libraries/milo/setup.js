@@ -1,13 +1,12 @@
-var fs = require('fs'),
-	miloPath = require('../../utils').getMiloPath(),
-	config = require('../../utils').getConfig(),
-	milo = require('../../utils').getAsset('milo.txt'),
-	exec = require('child_process').exec;
-
 module.exports = function () {
 
-	var privateConfig = miloPath + 'config.private.json',
-		librariesPath = miloPath + '/libraries';
+	var fs = require('fs'),
+		utils = require('../../utils'),
+		miloPath = utils.getMiloPath(),
+		config = utils.getConfig(),
+		milo = utils.getAsset(this.library, 'milo.txt'),
+		exec = require('child_process').exec,
+		privateConfig = miloPath + 'config.private.json';
 
 	if (!fs.existsSync(privateConfig)) {
 		exec('cp ' + privateConfig + '.sample ' + privateConfig);

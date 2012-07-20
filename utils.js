@@ -33,17 +33,15 @@ function getConfig () {
 
 }
 
-function getAsset (file) {
+function getAsset (library, file) {
 	var miloPath = getMiloPath();
-	return require('fs').readFileSync(miloPath + 'libraries/milo/assets/' + file, 'utf-8');
+	return require('fs').readFileSync(miloPath + 'libraries/' + library + '/assets/' + file, 'utf-8');
 
 }
 
-function renderTemplate (name, subs) {
+function renderTemplate (source, subs) {
 
 	var handlebars = require('handlebars'),
-		asset = 'templates/' + name + '.mustache',
-		source = require('./utils').getAsset(asset),
 		template = handlebars.compile(source);
 
 	return template(subs);

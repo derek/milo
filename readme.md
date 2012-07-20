@@ -8,12 +8,53 @@ About
 
 If Dog is Man's best friend, Milo is your best friend as a YUI developer.  He's trained to be able to help you out in a variety of ways, including things like sharing files, firing up different types of servers, keeping your code clean, and more! Best of all, he's easily trainable to do whatever else you like him to.
 
+Milo starts out life as a dumb little puppy, but once you train him (milo install), he'll begin picking up new skills.  Milo's skills are split up into various libraries, and the only library he starts with is his own that teaches him how to install, fetch, share, and update.  You can give him new skills to learn by subscribing him to other developers' libraries in config.public.json.  Then, every time you run `milo update` he'll fetch anything new that other developers have pushed into their own libraries.
+
+Config files
+============
+
+Milo is controlled by a few config files; [config.public.json], and [config.private.json]
+
+Anything in `global` will be avilable across any library in `this.config.{{property}}`.  Any properties scoped inside of `libraries.{{library}}` will only be available inside that specific library.  Also, any properties in config.private.json will override those in config.public.json.
+
+There are a few properties used by milo's core that are inside a library config
+ * source - The gist ID of the library
+ * push - If `true`, Milo will configure that repository with a push URL instead of only being limited to pulls.  You can always edit the `libraries/{{library}}/.git/config` yourself to update this after the fact.
+
 How
 ===
 milo *command* {required} [optional] --additional-flags
 
 
-Commands
+Library: milo
+=============
+
+`milo help`
+
+Dumps a command routing map so you can see what commands you are able to run
+
+---
+
+`milo fetch {gistID} [directory]`
+
+Clones a gist into a dir called {gistID}.  If no directory is specified, it will create a directory called {gistID} in the current one.
+
+---
+
+`milo share {path}`
+
+Creates a Gist with the given directory or file.  If a directory is specified, it will upload all files within that directory as part of the same gist.
+
+---
+
+
+`milo update`
+
+Updates your utilities by either cloning new libraries that haven't been yet, or pulling existing libraries to get updates.
+
+---
+
+Library: yui
 ========
 
 `milo app {template} [dir]`
@@ -51,12 +92,6 @@ Fires up a Selleck server to read documentation for {module}
 `milo edit {module}`
 
 Easily open up an editor for the specified module
-
----
-
-`milo fetch {gistID} [directory]`
-
-Clones a gist into a dir called {gistID}.  If no directory is specified, it will create a directory called {gistID} in the current one.
 
 ---
 
@@ -117,12 +152,6 @@ Note: Currently doesn't work properly for the yui seed file (/yui/yui.js).  So j
 
 ---
 
-`milo share {path}`
-
-Creates a Gist with the given directory or file.  If a directory is specified, it will upload all files within that directory as part of the same gist.
-
----
-
 `milo tickets`
 
 Fetches your tickets from the YUILibrary.com ticket tracker.  Can also specifiy additional flags for filtering.
@@ -132,14 +161,13 @@ Fetches your tickets from the YUILibrary.com ticket tracker.  Can also specifiy 
 
 ---
 
-`milo help`
 
-Dumps a command routing map so you can see what commands you are able to run
+Library: Allen
+==============
 
----
+`milo ruff`
 
-`milo update`
+Speak Milo, speak!
 
-Updates your utilities by either cloning new libraries that haven't been yet, or (soon) pulling existing libraries to get updates.
-
----
+[config.public.json]: https://github.com/derek/milo/blob/master/config.public.json.sample
+[config.private.json]: https://github.com/derek/milo/blob/master/config.private.json.sample

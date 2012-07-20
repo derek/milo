@@ -1,5 +1,6 @@
 {
 	"global" : {
+		"_comment" : "Anything here is available as a property inside -any- library",
 		"editorCommand" : "subl",
 		"browserCommand" : "open",
 		"github" : {
@@ -7,8 +8,12 @@
 		}
 	},
 	"libraries" : {
+		"_comment" : "Anything here is available as a property inside the specified library",
 		"milo" : {
-
+			"_comment" : "Intentionally empty, for now."
+		},
+		"allen" : {
+			"source" : 3147522
 		},
 		"derek" : {
 			"source" : "3139908",

@@ -22,16 +22,12 @@ module.exports = function () {
 			}
 
 			if (fs.existsSync(dir)) {
-				console.log('\nUpdating ' + id + ' ...');
-				exec('git pull ', {cwd: dir}).on('exit', function (code) {
-					console.log('Done\n');
-				});
+				console.log('Updating ' + id + ' ...');
+				exec('git pull ', {cwd: dir});
 			}
 			else {
-				console.log('\nCloning ' + id + ' ...');
+				console.log('Cloning ' + id + ' ...');
 				exec('git clone ' + git_url + ' ' + id + '; mkdir ' + dir + 'assets; mv ' + id + ' ' + dir).on('exit', function (code) {
-
-					console.log('Done\n');
 
 					fs.readdirSync(dir).forEach(function(file){
 						console.log('\t' + file);

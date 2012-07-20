@@ -2,15 +2,25 @@ module.exports = function () {
 
 	var fs = require('fs'),
 		utils = require('../../utils'),
+		config = this.config,
 		miloPath = utils.getMiloPath(),
-		config = utils.getConfig(),
 		milo = utils.getAsset(this.library, 'milo.txt'),
 		exec = require('child_process').exec,
-		privateConfig = miloPath + 'config.private.json';
+		publicConfig = miloPath + 'config.public.json',
+		privateConfig = miloPath + 'config.private.json',
+		noob = false;
+
+	if (!fs.existsSync(publicConfig)) {
+		exec('mv ' + publicConfig + '.sample ' + publicConfig);
+		noob = true;
+	}
 
 	if (!fs.existsSync(privateConfig)) {
-		exec('cp ' + privateConfig + '.sample ' + privateConfig);
+		exec('mv ' + privateConfig + '.sample ' + privateConfig);
+		noob = true;
+	}
 
+	if (noob) {
 		console.log(milo);
 
 		console.log("A newbie? Welcome! \n\nBefore we get to the fun stuff, first thing I need you to do is update your config files.");

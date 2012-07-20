@@ -1,5 +1,4 @@
 node_modules
-config.public.json
-config.private.json
+config.*
 libraries
 !libraries/milo

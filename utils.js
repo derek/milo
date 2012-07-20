@@ -1,18 +1,20 @@
 function getConfig () {
 
-	var configPublic = require('./config.public'),
-		fs = require('fs'),
+	var fs = require('fs'),
 		configPrivate,
 		config = {},
 		key;
 
-	for (key in configPublic.global) {
-		config[key] = configPublic.global[key];
-	}
+	if (fs.existsSync(miloPath + 'config.private.json')) {
+		configPublic = require('./config.public');
+		for (key in configPublic.global) {
+			config[key] = configPublic.global[key];
+		}
 
-	if (configPublic.libraries && configPublic.libraries[this.library]) {
-		for (key in configPublic.libraries[this.library]) {
-			config[key] = configPublic.libraries[this.library][key];
+		if (configPublic.libraries && configPublic.libraries[this.library]) {
+			for (key in configPublic.libraries[this.library]) {
+				config[key] = configPublic.libraries[this.library][key];
+			}
 		}
 	}
 

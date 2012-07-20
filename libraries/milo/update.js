@@ -27,14 +27,7 @@ module.exports = function () {
 			}
 			else {
 				console.log('Cloning ' + id + ' ...');
-				exec('git clone ' + git_url + ' ' + id + '; mkdir ' + dir + 'assets; mv ' + id + ' ' + dir).on('exit', function (code) {
-
-					fs.readdirSync(dir).forEach(function(file){
-						console.log('\t' + file);
-					});
-
-					console.log('');
-				});
+				exec('git clone ' + git_url + ' ' + id + '; mkdir ' + dir + 'assets;', {cwd: miloPath + 'libraries/'});
 			}
 		}
 	}

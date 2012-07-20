@@ -1,5 +1,6 @@
 var fs = require('fs'),
 	miloPath = require('../../utils').getMiloPath(),
+	config = require('../../utils').getConfig(),
 	milo = require('../../utils').getAsset('milo.txt'),
 	exec = require('child_process').exec;
 
@@ -21,11 +22,8 @@ module.exports = function () {
 		console.log('');
 	}
 	else {
-		try {
-			require('../../config.private');
-		}
-		catch (e) {
-			console.log('Ruh roh.  Check your config.private.json, looks like there is a problem. ( ' + privateConfig + ' )');
+		if (config.github.token === "YOUR_TOKEN_GOES_HERE") {
+			console.log("Ruh roh.  You haven't configured Github yet.");
 			return;
 		}
 

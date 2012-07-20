@@ -17,20 +17,15 @@ function getConfig () {
 	}
 
 	if (fs.existsSync(miloPath + 'config.private.json')) {
-		try {
-			configPrivate = require('./config.private');
-			for (key in configPrivate.global) {
-				config[key] = configPrivate.global[key];
-			}
-
-			if (configPrivate.libraries && configPrivate.libraries[this.library]) {
-				for (key in configPrivate.libraries[this.library]) {
-					config[key] = configPrivate.libraries[this.library][key];
-				}
-			}
+		configPrivate = require('./config.private');
+		for (key in configPrivate.global) {
+			config[key] = configPrivate.global[key];
 		}
-		catch (e) {
 
+		if (configPrivate.libraries && configPrivate.libraries[this.library]) {
+			for (key in configPrivate.libraries[this.library]) {
+				config[key] = configPrivate.libraries[this.library][key];
+			}
 		}
 	}
 

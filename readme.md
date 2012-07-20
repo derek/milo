@@ -8,14 +8,14 @@ About
 
 If Dog is Man's best friend, Milo is your best friend as a command-line cowboy.  He's trained to be able to help you out in a variety of ways. Best of all, he's easily trainable to do whatever else you like him to.
 
-Milo starts out life as a dumb little puppy, but once you train him (milo install), he'll begin picking up new skills.  Milo's skills are split up into various libraries, and the only library he starts with is his own that teaches him how to install, fetch, share, and update.  You can give him new skills to learn by subscribing him to other developers' libraries in config.json.  Then, every time you run `milo update` he'll fetch anything new that others have pushed into their own libraries.
+Milo starts out life as a dumb little puppy, but once you train him (`milo install`), he'll begin picking up new skills.  All that Milo knows is split up into various libraries, and the only library he starts with is his own that teaches him how to `install`, `fetch`, `share`, and `update`.  You can give him new skills to learn by subscribing him to other libraries in `config.json`.  Then, every time you run `milo update` he'll fetch new stuff that others have pushed into their own libraries.
 
 Config files
 ============
 
 Milo is controlled by [config.json]
 
-Anything in `global` will be avilable across any library in `this.config.{{property}}`.  Any properties scoped inside of `libraries.{{library}}` will only be available inside that specific library.
+Anything in `global` will be avilable across any library in `this.config.{{property}}`.  Any properties scoped inside of `libraries.{{library}}` will only be available inside that specific library. Library properties override global properties if they collide.
 
 There are a few properties used by milo's core that are inside a library config
  * source - The gist ID of the library

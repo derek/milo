@@ -23,7 +23,16 @@ There are a few properties used by milo's core that are inside a library config
 
 How
 ===
-milo *command* {required} [optional] --additional-flags
+
+First up, install milo
+
+	git clone git://github.com/derek/milo.git
+	cd milo
+	npm link
+
+Then run `milo`, and he'll guide you through the config process.  After that, it's just
+
+	milo *command* {required} [optional] --additional-flags
 
 
 Library: milo
@@ -31,13 +40,13 @@ Library: milo
 
 `milo help`
 
-Dumps a command routing map so you can see what commands you are able to run
+Dumps a routing map of commands so you can see what he can do
 
 ---
 
 `milo fetch {gistID} [directory]`
 
-Clones a gist into a dir called {gistID}.  If no directory is specified, it will create a directory called {gistID} in the current one.
+Clones a gist into a dir called {directory}.  If no directory is specified, it will create a directory called {gistID} in the current one.
 
 ---
 

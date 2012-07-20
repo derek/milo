@@ -1,21 +1,21 @@
 Milo
 ====
 
-A command-line tool for YUI development
+Social scripting
 
 About
 =====
 
-If Dog is Man's best friend, Milo is your best friend as a YUI developer.  He's trained to be able to help you out in a variety of ways, including things like sharing files, firing up different types of servers, keeping your code clean, and more! Best of all, he's easily trainable to do whatever else you like him to.
+If Dog is Man's best friend, Milo is your best friend as a command-line cowboy.  He's trained to be able to help you out in a variety of ways, including things like sharing files, firing up different types of servers, keeping your code clean, and more! Best of all, he's easily trainable to do whatever else you like him to.
 
-Milo starts out life as a dumb little puppy, but once you train him (milo install), he'll begin picking up new skills.  Milo's skills are split up into various libraries, and the only library he starts with is his own that teaches him how to install, fetch, share, and update.  You can give him new skills to learn by subscribing him to other developers' libraries in config.public.json.  Then, every time you run `milo update` he'll fetch anything new that other developers have pushed into their own libraries.
+Milo starts out life as a dumb little puppy, but once you train him (milo install), he'll begin picking up new skills.  Milo's skills are split up into various libraries, and the only library he starts with is his own that teaches him how to install, fetch, share, and update.  You can give him new skills to learn by subscribing him to other developers' libraries in config.json.  Then, every time you run `milo update` he'll fetch anything new that others have pushed into their own libraries.
 
 Config files
 ============
 
-Milo is controlled by a few config files; [config.public.json], and [config.private.json]
+Milo is controlled by [config.json]
 
-Anything in `global` will be avilable across any library in `this.config.{{property}}`.  Any properties scoped inside of `libraries.{{library}}` will only be available inside that specific library.  Also, any properties in config.private.json will override those in config.public.json.
+Anything in `global` will be avilable across any library in `this.config.{{property}}`.  Any properties scoped inside of `libraries.{{library}}` will only be available inside that specific library.
 
 There are a few properties used by milo's core that are inside a library config
  * source - The gist ID of the library
@@ -57,9 +57,12 @@ Updates your utilities by either cloning new libraries that haven't been yet, or
 Library: yui
 ========
 
+Milo intially started out as a collection of scripts to aid in YUI development, so we're going to include those as a reference.
+
+
 `milo app {template} [dir]`
 
-Generate a YUI starter app from {template} in {dir}.  Templates are actually gist IDs, which you can find in `config.public.json`.  Great to be used in conjunction with `fetch`, so once you post your files, give someone else that ID and they can run `milo fetch {gist ID}` to start using your app.
+Generate a YUI starter app from {template} in {dir}.  Templates are actually gist IDs, which you can find in `config.json`.  Great to be used in conjunction with `fetch`, so once you post your files, give someone else that ID and they can run `milo fetch {gist ID}` to start using your app.
 
 This is really just a shortcut for `milo fetch {gistID} {dir}`
 
@@ -162,12 +165,11 @@ Fetches your tickets from the YUILibrary.com ticket tracker.  Can also specifiy 
 ---
 
 
-Library: Allen
+Library: allen
 ==============
 
 `milo ruff`
 
 Speak Milo, speak!
 
-[config.public.json]: https://github.com/derek/milo/blob/master/config.public.json.sample
-[config.private.json]: https://github.com/derek/milo/blob/master/config.private.json.sample
+[config.json]: https://github.com/derek/milo/blob/master/config.json.sample

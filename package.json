@@ -7,7 +7,6 @@
     "engine": {
         "node": ">=v0.7.2"
     },
-    "main": "./lib/milo.js",
     "bin": {
         "milo": "./bin/milo.js"
     },

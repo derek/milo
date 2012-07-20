@@ -6,7 +6,7 @@ Social scripting
 About
 =====
 
-If Dog is Man's best friend, Milo is your best friend as a command-line cowboy.  He's trained to be able to help you out in a variety of ways, including things like sharing files, firing up different types of servers, keeping your code clean, and more! Best of all, he's easily trainable to do whatever else you like him to.
+If Dog is Man's best friend, Milo is your best friend as a command-line cowboy.  He's trained to be able to help you out in a variety of ways. Best of all, he's easily trainable to do whatever else you like him to.
 
 Milo starts out life as a dumb little puppy, but once you train him (milo install), he'll begin picking up new skills.  Milo's skills are split up into various libraries, and the only library he starts with is his own that teaches him how to install, fetch, share, and update.  You can give him new skills to learn by subscribing him to other developers' libraries in config.json.  Then, every time you run `milo update` he'll fetch anything new that others have pushed into their own libraries.
 

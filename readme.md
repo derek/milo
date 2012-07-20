@@ -168,6 +168,8 @@ Fetches your tickets from the YUILibrary.com ticket tracker.  Can also specifiy 
 Library: allen
 ==============
 
+He was the first guinea pig to install milo, so this was his contribution
+
 `milo ruff`
 
 Speak Milo, speak!

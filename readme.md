@@ -82,7 +82,7 @@ Just a general utility for digging through YUI's source and detecting any odditi
 
 `milo coverage {module}`
 
-Fires up server to check your code coverage for {module}
+Fires up a server to check the code coverage for {module}
 
 ---
 

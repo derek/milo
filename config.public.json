@@ -15,7 +15,7 @@
 		"allen" : {
 			"source" : 3147522
 		},
-		"derek" : {
+		"yui" : {
 			"source" : "3139908",
 			"docsCommand" : "selleck -s",
 			"coverageCommand" : "yui-coverage",

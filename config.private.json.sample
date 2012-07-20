@@ -15,6 +15,6 @@
 		"_comment" : "You can place any sensitive information specific to a library here as well",
 		"milo" : {
 			"_comment" : "Intentionally empty."
-		},
+		}
 	}
 }

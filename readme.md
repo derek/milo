@@ -28,7 +28,7 @@ First up, install milo
 
 	git clone git://github.com/derek/milo.git
 	cd milo
-	npm link
+	sudo npm link
 
 Then run `milo`, and he'll guide you through the config process.  After that, it's just
 

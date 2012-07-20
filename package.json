@@ -4,9 +4,7 @@
     "preferGlobal": "true",
     "author": "Derek Gathright <mail@derek.io>",
     "description": "A command-line tool for YUI development",
-    "engine": {
-        "node": ">=0.7.2"
-    },
+    "engine": "node >= 0.7.2",
     "bin": {
         "milo": "./bin/milo.js"
     },
@@ -17,9 +15,8 @@
         "url": "http://github.com/derek/milo.git"
     },
     "dependencies": {
-        "optimist": "0.3.4",
-        "gister": "0.2.1",
-        "handlebars": "1.0"
+        "optimist": ">= 0.3.4",
+        "gister": ">= 0.2.1"
     },
     "license": "BSD"
 }

@@ -4,7 +4,7 @@ module.exports = function () {
 
 	var fs = require('fs'),
 		exec = require('child_process').exec,
-		libraries = require(miloPath + 'config.public').libraries,
+		libraries = require(miloPath + 'config').libraries,
 		config, id;
 
 	for(id in libraries) {

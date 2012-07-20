@@ -19,7 +19,6 @@ function getConfig () {
 	}
 
 	return config;
-
 }
 
 function getAsset (library, file) {

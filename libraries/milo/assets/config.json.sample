@@ -4,7 +4,8 @@
 		"editorCommand" : "subl",
 		"browserCommand" : "open",
 		"github" : {
-			"user" : "{{yourUsername}}"
+			"user" : "{{yourUsername}}",
+			"token" : "YOUR_TOKEN_GOES_HERE"
 		}
 	},
 	"libraries" : {

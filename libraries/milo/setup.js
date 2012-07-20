@@ -11,7 +11,7 @@ module.exports = function () {
 		noob = false;
 
 	if (!fs.existsSync(configTarget)) {
-		exec('mv ' + configSource + ' ' + configTarget);
+		exec('cp ' + configSource + ' ' + configTarget);
 		noob = true;
 	}
 

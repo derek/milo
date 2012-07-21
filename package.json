@@ -15,8 +15,7 @@
         "url": "http://github.com/derek/milo.git"
     },
     "dependencies": {
-        "optimist": ">= 0.3.4",
-        "gister": ">= 0.2.1"
+        "optimist": ">= 0.3.4"
     },
     "license": "BSD"
 }

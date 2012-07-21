@@ -16,6 +16,7 @@ this.miloPath = miloPath;
 this.library  = library;
 this.libPath  = libPath;
 this.flags    = argv;
+this.config   = utils.getConfig.apply(this);
 
 if (!fs.existsSync(libPath + utility + '.js')) {
 	if (utility === "help") {
@@ -24,11 +25,13 @@ if (!fs.existsSync(libPath + utility + '.js')) {
 			console.log(u + ' -> ' + utilities[u]);
 		}
 	}
+	else if (utility === "update") {
+		require(miloPath + utility).apply(this, utilArgs);
+	}
 	else {
 		console.log(library + ' does not know ' + utility + '; try `milo help` for a list of all the available commands.')
 	}
 }
 else {
-	this.config   = utils.getConfig.apply(this);
 	require(libPath + utility).apply(this, utilArgs);
 }

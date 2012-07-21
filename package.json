@@ -6,7 +6,7 @@
     "description": "A command-line tool for YUI development",
     "engine": "node >= 0.7.2",
     "bin": {
-        "milo": "./bin/milo.js"
+        "milo": "./bin/milo"
     },
     "url": "https://github.com/derek/milo",
     "keywords": ["milo"],

@@ -1,0 +1,35 @@
+#!/usr/bin/env node
+/*jslint nomen:true sloppy:true white:true node:true*/
+
+var optimist = require('optimist'),
+	fs 		 = require('fs'),
+	path 	 = require('path'),
+	utils 	 = require('../utils'),
+	miloPath = __filename.replace('bin/milo', ''),
+	argv	 = optimist.argv,
+	library  = argv['$0'],
+	libPath  = miloPath + 'libraries/' + library + '/',
+	utility  = argv._.shift() || 'help',
+	utilArgs = argv._,
+	utilities, u;
+
+this.miloPath = miloPath;
+this.library  = library;
+this.libPath  = libPath;
+this.flags    = argv;
+
+if (!fs.existsSync(libPath + utility + '.js')) {
+	if (utility === "help") {
+		utilities = utils.getUtilityMap.apply(this);
+		for (u in utilities) {
+			console.log(u + ' -> ' + utilities[u]);
+		}
+	}
+	else {
+		console.log(library + ' does not know ' + utility + '; try `milo help` for a list of all the available commands.')
+	}
+}
+else {
+	this.config   = utils.getConfig.apply(this);
+	require(libPath + utility).apply(this, utilArgs);
+}

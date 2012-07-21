@@ -1,82 +1,60 @@
 function getConfig () {
-
 	var fs = require('fs'),
-		configPublic,
+		miloPath = this.miloPath,
+		library = this.library,
 		config = {},
+		out = {},
+		configPaths = [
+			miloPath,
+			miloPath + 'libraries/' + library + '/'
+		],
 		key;
-
-	if (fs.existsSync(miloPath + 'config.json')) {
-		configPublic = require('./config');
-		for (key in configPublic.global) {
-			config[key] = configPublic.global[key];
-		}
-
-		if (configPublic.libraries && configPublic.libraries[this.library]) {
-			for (key in configPublic.libraries[this.library]) {
-				config[key] = configPublic.libraries[this.library][key];
+		
+	configPaths.forEach(function (path) {
+		if (fs.existsSync(path + 'config.json')) {
+			config = require(path + 'config');
+			if (library === 'milo') {
+				for (key in config.global) {
+					out[key] = config.global[key];
+				}
+			}
+			else {
+				for (key in config) {
+					out[key] = config[key];
+				}
 			}
 		}
-	}
+	});
 
-	return config;
+	return out;
 }
 
 function getAsset (library, file) {
-	var miloPath = getMiloPath();
+	var miloPath = this.miloPath;
+
 	return require('fs').readFileSync(miloPath + 'libraries/' + library + '/assets/' + file, 'utf-8');
-
-}
-
-function renderTemplate (source, subs) {
-
-	var handlebars = require('handlebars'),
-		template = handlebars.compile(source);
-
-	return template(subs);
-
-}
-
-function getGister (config) {
-	var config = require('./utils').getConfig(),
-		Gister = require('gister');
-
-	return new Gister({
-		token: config.github.token
-	});
 }
 
 function getUtilityMap () {
 	var fs = require('fs'),
+		miloPath = this.miloPath,
+		library = this.library,
 		utils = {},
-		files,
-		i;
+		name;
 
-	utilDirs = fs.readdirSync(miloPath + 'libraries');
-	utilDirs.forEach(function (dir) {
-		utilFiles = fs.readdirSync(miloPath + 'libraries/' + dir);
-		utilFiles.forEach(function (file) {
-			if (file.match('.js')) {
-				var name = file.replace('.js', '');
-				utils[name] = 'libraries/' + dir + '/' + name;
-			}
-		});
+	files = fs.readdirSync(miloPath + 'libraries/' + library);
+	files.forEach(function (file) {
+		if (file.match('.js')) {
+			name = file.replace('.js', '');
+			utils[name] = miloPath + 'libraries/' + library + '/' + name;
+		}
 	});
 
 	return utils;
 }
 
-function getMiloPath () {
-	var path = require('path');
-	return __filename.replace(path.basename(__filename), '');
-}
-
-var miloPath = getMiloPath();
-
 module.exports = {
-	getConfig : getConfig,
-	getAsset : getAsset,
-	renderTemplate : renderTemplate,
-	getGister : getGister,
-	getUtilityMap: getUtilityMap,
-	getMiloPath: getMiloPath
+	getConfig 	  : getConfig,
+	getAsset 	  : getAsset,
+	getUtilityMap : getUtilityMap
 };

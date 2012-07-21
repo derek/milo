@@ -8,14 +8,12 @@ About
 
 If Dog is Man's best friend, Milo is your best friend as a command-line cowboy.  He's trained to be able to help you out in a variety of ways. Best of all, he's easily trainable to do whatever else you like him to.
 
-Milo starts out life as a dumb little puppy, but once you train him (`milo install`), he'll begin picking up new skills.  All that Milo knows is split up into various libraries, and the only library he starts with is his own that teaches him how to `install`, `fetch`, `share`, and `update`.  You can give him new skills to learn by subscribing him to other libraries in `config.json`.  Then, every time you run `milo update` he'll fetch new stuff that others have pushed into their own libraries.
+Milo starts out life as a dumb little puppy, but once you train him (`milo install`), he'll begin picking up new skills.  All that Milo knows is split up into various libraries, and the only library he starts with is [his own](https://github.com/derek/milo/tree/master/libraries/milo) that teaches him how to `install`, `fetch`, `share`, and `update`.  You can give him new skills to learn by subscribing him to other libraries in `config.json`.  Then, every time you run `milo update` he'll fetch new stuff that others have pushed into their own libraries.
 
 Config files
 ============
 
-Milo is controlled by [config.json]
-
-Anything in `global` will be avilable across any library in `this.config.{{property}}`.  Any properties scoped inside of `libraries.{{library}}` will only be available inside that specific library. Library properties override global properties if they collide.
+Milo is controlled by [config.json]. Anything in `global` will be avilable across any library in `this.config.{{property}}`.  Any properties scoped inside of `libraries.{{library}}` will only be available inside that specific library. Library properties override global properties if they collide.
 
 There are a few properties used by milo's core that are inside a library config
  * source - The gist ID of the library
@@ -144,9 +142,9 @@ Sources:
 
 ---
 
-`milo server`
+`milo dms {start | generate}`
 
-Fires up a dynamic module server @ http://localhost:3000/. This is useful because it will dynamically wrap your /src/ files as a YUI module and serve it, so now you don't have to rebuild everytime!
+Fires up a **d**ynamic **m**odule **s**erver @ http://localhost:3000/. This is useful because it will dynamically wrap your /src/ files as a YUI module and serve it, so now you don't have to rebuild everytime!
 
 To use it, add this to your YUI config
 
@@ -158,7 +156,7 @@ To use it, add this to your YUI config
 		filter:"raw"
 	}
 
-This utility needs a mapping of routes from the build path to the src file(s), which you can find in `milo/assets/serverRoutes.json`.  If you ever need to regenerate that file, run `milo server generate`.
+This utility needs a mapping of routes from the build path to the src file(s), which you can find in `milo/assets/serverRoutes.json`.  If you ever need to regenerate that file, run `milo dms generate`.
 
 Note: Currently doesn't work properly for the yui seed file (/yui/yui.js).  So just use a CDN seed file @ `http://yui.yahooapis.com/{version}/build/yui/yui-min.js`
 

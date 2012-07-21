@@ -1,0 +1,22 @@
+{
+	"global" : {
+		"_comment" : "Anything here is available as a property inside -any- library",
+		"editorCommand" : "subl",
+		"browserCommand" : "open",
+		"github" : {
+			"user" : "derek",
+			"token" : "YOUR_TOKEN_HERE"
+		}
+	},
+	"libraries" : {
+		"milo" : {
+			"url" : "git@gist.github.com:3155170.git"
+		},
+		"yui" : {
+			"url" : "git@gist.github.com:3139908.git"
+		},
+		"allen" : {
+			"url" : "git://gist.github.com/3147522"
+		}
+	}
+}

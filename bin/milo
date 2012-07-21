@@ -1,6 +1,5 @@
 #!/usr/bin/env node
 /*jslint nomen:true sloppy:true white:true node:true*/
-
 var optimist = require('optimist'),
 	fs 		 = require('fs'),
 	path 	 = require('path'),

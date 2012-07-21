@@ -33,6 +33,7 @@ function getAsset (library, file) {
 	var miloPath = this.miloPath;
 
 	return require('fs').readFileSync(miloPath + 'libraries/' + library + '/assets/' + file, 'utf-8');
+
 }
 
 function getUtilityMap () {

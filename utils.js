@@ -1,6 +1,6 @@
 function getConfig () {
-
 	var fs = require('fs'),
+		miloPath = getMiloPath(),
 		configPublic,
 		config = {},
 		key;
@@ -23,12 +23,12 @@ function getConfig () {
 
 function getAsset (library, file) {
 	var miloPath = getMiloPath();
+
 	return require('fs').readFileSync(miloPath + 'libraries/' + library + '/assets/' + file, 'utf-8');
 
 }
 
 function renderTemplate (source, subs) {
-
 	var handlebars = require('handlebars'),
 		template = handlebars.compile(source);
 
@@ -47,6 +47,7 @@ function getGister (config) {
 
 function getUtilityMap () {
 	var fs = require('fs'),
+		miloPath = getMiloPath(),
 		utils = {},
 		files,
 		i;
@@ -69,8 +70,6 @@ function getMiloPath () {
 	var path = require('path');
 	return __filename.replace(path.basename(__filename), '');
 }
-
-var miloPath = getMiloPath();
 
 module.exports = {
 	getConfig : getConfig,

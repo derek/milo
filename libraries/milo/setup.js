@@ -4,9 +4,8 @@ module.exports = function () {
 		utils = require('../../utils'),
 		config = this.config,
 		miloPath = this.miloPath,
-		milo = utils.getAsset(this.library, 'milo.txt'),
 		exec = require('child_process').exec,
-		configSource = miloPath + 'libraries/milo/assets/config.json.sample',
+		configSource = miloPath + 'config.json.sample',
 		configTarget = miloPath + 'config.json',
 		noob = false;
 
@@ -16,10 +15,8 @@ module.exports = function () {
 	}
 
 	if (noob) {
-		console.log(milo);
-
-		console.log("A newbie? Welcome! \n\nBefore we get to the fun stuff, first thing I need you to do is update your config.json file.");
-		console.log("You can find this @ " + miloPath + "config.json");
+		console.log('');
+		console.log("A newbie? Welcome! \n\nBefore we get to the fun stuff, first thing I need you to do is update your config.json file @ " + miloPath + "config.json");
 		console.log("One thing you'll need is a Github API token, which can be obtained by executing");
 		console.log("   curl https://api.github.com/authorizations -d '{\"scopes\": [\"gist\"],\"note\": \"Milo\"}' --user yourUsername:yourPassword");
 		console.log('');
@@ -34,8 +31,6 @@ module.exports = function () {
 			console.log("Then go stick it in " + miloPath + "config.json and run this command again");
 			return;
 		}
-
-		console.log(milo);
 
 		console.log("Nice job!  At this point you only have a single library with core functionality, but I want to learn some new tricks, so lets pull in some other libraries");
 		console.log('');

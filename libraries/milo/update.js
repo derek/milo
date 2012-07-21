@@ -1,12 +1,9 @@
 module.exports = function () {
-	console.log(this.config);
 	var fs = require('fs'),
-	exec = require('child_process').exec,
-	miloPath = this.miloPath,
-	libraries = this.config.libraries,
-	libraries = require(miloPath + 'config').libraries,
-	miloPath = this.miloPath,
-	config, id, dir, git_url
+		exec = require('child_process').exec,
+		libraries = require('../../config').libraries,
+		miloPath = this.miloPath,
+		id, dir, url;
 
 	for(id in libraries) {
 		dir = miloPath + 'libraries/' + id + '/';
@@ -18,9 +15,14 @@ module.exports = function () {
 				exec('git pull ', {cwd: dir});
 			}
 			else {
-				console.log('git clone ' + git_url + ' ' + id);
 				console.log('Cloning ' + id + ' ...');
-				exec('git clone ' + git_url + ' ' + id, {cwd: miloPath + 'libraries/'});
+
+				exec('git clone ' + url + ' ' + id, {cwd: miloPath + 'libraries/'}, function (i) {
+					return function () {
+						// TODO: Figure out a better way to determine the bin path, cause this will certainly break
+						console.log('Now run: sudo ln -s `which milo` ' + process.argv[1].replace('milo', '') + i);
+					}
+				}(id));
 			}
 		}
 	}

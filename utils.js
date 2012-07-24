@@ -45,7 +45,7 @@ function getUtilityMap () {
 
 	files = fs.readdirSync(miloPath + 'libraries/' + library);
 	files.forEach(function (file) {
-		if (file.match('.js')) {
+		if (file.match(/.js$/)) {
 			name = file.replace('.js', '');
 			utils[name] = miloPath + 'libraries/' + library + '/' + name;
 		}

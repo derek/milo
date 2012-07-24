@@ -13,7 +13,7 @@ function getConfig () {
 	configPaths.forEach(function (path) {
 		if (fs.existsSync(path + 'config.json')) {
 			config = require(path + 'config');
-			if (library === 'milo') {
+			if (path.match(/milo\/$/)) {
 				for (key in config.global) {
 					out[key] = config.global[key];
 				}

@@ -29,7 +29,7 @@ if (!fs.existsSync(libPath + utility + '.js')) {
 		require(miloPath + utility).apply(this, utilArgs);
 	}
 	else {
-		console.log(library + ' does not know ' + utility + '; try `milo help` for a list of all the available commands.')
+		console.log(library + ' does not know ' + utility + '; try `' + library + ' help` for a list of all the available commands.')
 	}
 }
 else {

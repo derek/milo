@@ -1,0 +1,7 @@
+{
+    "name": "milo-gist",
+    "version" : "0.0.1",
+    "dependencies": {
+        "gister": ">= 0.2.1"
+    }
+}

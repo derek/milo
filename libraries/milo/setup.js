@@ -14,7 +14,6 @@ module.exports = function () {
 		console.log("One thing you'll need is a Github API token, which can be obtained by executing");
 		console.log("   curl https://api.github.com/authorizations -d '{\"scopes\": [\"gist\"],\"note\": \"Milo\"}' --user yourUsername:yourPassword");
 		console.log('');
-		console.log('Be sure to follow the instructions about obtaining your Github token in config.json.');
 		console.log('Once you do that, run `milo install` again so we can verify your config settings are correct.');
 		console.log('');
 	}
